@@ -1,20 +1,16 @@
 @font-face {
   font-family: Open_Sans;
-  src: url("Raleway/static/Raleway-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-size: 2rem;
-}
-
-*{
-  font-family: "Open_Sans", sans-serif;
+  src: url("font/Raleway/static/Raleway-Medium.ttf") format("truetype");
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 6vh;
   display: flex;
+  top: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 7%;
   flex-direction: column;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   justify-content: center;
   color: white;
   padding: 0 0.75rem;
@@ -22,4 +18,11 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.main-content{
+  display: flex;
+  flex-direction: row;
+  height: 93%;
+  width: 100%;
 }

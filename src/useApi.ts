@@ -2,8 +2,8 @@ import axios, {AxiosRequestConfig} from "axios";
 import {useEffect, useState} from "react";
 
 type Dependency = number | string;
-type ErrorDeclaration = null | Error;
-type ApiStatus = "idle" | "success" | "loading" ;
+type ErrorDeclaration = null | string;
+type ApiStatus = "idle" | "success" | "loading" | "error" ;
 
 
 function useApi<T>(
@@ -23,17 +23,14 @@ function useApi<T>(
                     .then((res) => {
                         if(res.status >= 200){
                             setStatus("success")
-                            console.log(res)
                             setResponse(res.data)
                         }
                     })
-        }catch (err : unknown ){
-            setError(error)
-            if (axios.isAxiosError(error)){
-                console.log(error)
+        }catch (err : unknown){
+            setStatus("error")
+            if (!axios.isAxiosError(error)){
                 if (err instanceof Error) {
-                    console.log(err)
-                    console.log(error)
+                    setError(err.message)
                     console.log(err.message);
                 }
             }
@@ -41,9 +38,8 @@ function useApi<T>(
     }
 
     useEffect(() => {
-            getData();
-        },
-        [dependency])
+        getData();
+        },[dependency])
 
     return {response, error, status}
 }
