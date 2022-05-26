@@ -38,7 +38,7 @@ function Main(this: any){
         method: "GET",
         url: `http://85.159.214.103:8105/api/rest/master/applications/model-information/${application_code}`,
         headers: {
-            'AuthToken': 'LTFMOjpiYzZjNGZhYjJlNTA4MjcyNTY0ZjU1ZDgzMjM0Y2Q5MDBlOWVkOWE4YjlkZGQ1NDA1YjI2NDg0OTdmYjMyOGEz',
+            'AuthToken': 'LTFMOjpkMWY1ZGIyN2IxYmNjNmZkOWZiM2JmMDBkNjc2YmQ3M2IwMzFkOThhZjRiZGE3NWIzYjgzZjIyN2U4N2U5OTVi',
             'RequestReference': 'bnnnnkkkmkk'
         },
     }, application_code)
